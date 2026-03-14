@@ -16,7 +16,10 @@ clean-targets:
 seeds:
   dbt_ravenstack:
     +schema: raw
-
+vars:
+  dbt_date:time_zone: "UTC" # Or your local timezone
+  dbt_date:week_start_day: 1 # 1 = Monday, 0 = Sunday
+  
 models:
   dbt_ravenstack:
     staging:
