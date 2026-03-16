@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: rpt_churn_reason_summary
+    description: "Churn reason summary report"

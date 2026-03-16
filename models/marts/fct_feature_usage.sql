@@ -26,7 +26,7 @@ select
     -- Measures
     u.usage_count,
     u.usage_duration_secs,
-    round(u.usage_duration_secs / 60.0, 2)            as usage_duration_mins,
+    round(u.usage_duration_secs / 60.0, 2) as usage_duration_mins,
     u.error_count,
     case when u.error_count > 0 then true else false end as had_errors
 

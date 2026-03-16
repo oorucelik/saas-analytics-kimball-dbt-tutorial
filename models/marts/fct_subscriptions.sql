@@ -35,7 +35,7 @@ select
         when s.end_date is not null
         then datediff('day', s.start_date, s.end_date)
         else datediff('day', s.start_date, current_date)
-    end                                               as subscription_duration_days,
+    end as subscription_duration_days,
 
     -- Flags
     s.is_trial,

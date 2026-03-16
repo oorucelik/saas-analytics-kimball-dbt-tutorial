@@ -19,3 +19,6 @@ left join accounts a
     on c.account_id = a.account_id
 GROUP BY 
     churn_reason
+ORDER BY
+    churn_event_count DESC
+
