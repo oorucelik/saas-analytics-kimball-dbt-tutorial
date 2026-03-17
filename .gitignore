@@ -8,3 +8,6 @@ dbt_internal_packages/
 dbt.log
 dbt_ravenstack
 logs/dbt.log
+ravenstack.duckdb
+logs/dbt.log
+logs/query_log.sql
