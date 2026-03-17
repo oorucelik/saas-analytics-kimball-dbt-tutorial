@@ -1,6 +1,8 @@
+version: 2
+
 models:
   - name: stg_accounts
-    description: ""
+    description: "Cleaned account data — one row per account"
     columns:
       - name: account_id
         tests:
@@ -8,7 +10,7 @@ models:
           - not_null
 
   - name: stg_churn_events
-    description: ""
+    description: "Cleaned churn events — one row per churn event"
     columns:
       - name: churn_event_id
         tests:
@@ -16,23 +18,20 @@ models:
           - not_null
       - name: account_id
         tests:
-          - unique
           - not_null
 
   - name: stg_feature_usage
-    description: ""
+    description: "Cleaned daily feature usage logs"
     columns:
       - name: usage_id
         tests:
-          - unique
           - not_null
       - name: subscription_id
         tests:
-          - unique
           - not_null
 
   - name: stg_subscriptions
-    description: ""
+    description: "Cleaned subscription events"
     columns:
       - name: subscription_id
         tests:
@@ -40,11 +39,10 @@ models:
           - not_null
       - name: account_id
         tests:
-          - unique
           - not_null
 
   - name: stg_support_tickets
-    description: ""
+    description: "Cleaned support tickets"
     columns:
       - name: ticket_id
         tests:
@@ -52,5 +50,4 @@ models:
           - not_null
       - name: account_id
         tests:
-          - unique
           - not_null

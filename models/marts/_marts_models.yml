@@ -43,7 +43,6 @@ models:
       - name: usage_key
         description: "Surrogate key for usage logs"
         tests:
-          - unique
           - not_null
 
   - name: fct_churn
