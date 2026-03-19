@@ -11,7 +11,7 @@ accounts as (
 ),
 
 plans as (
-    select plan_key, plan_tier, billing_frequency
+    select plan_key, plan_tier, plan_tier_rank, billing_frequency
     from {{ ref('dim_plan') }}
 )
 
@@ -23,6 +23,9 @@ select
     a.account_key,
     p.plan_key,
 
+    p.plan_tier, --for grouping
+    p.plan_tier_rank, --for sorting
+    
     -- Dates
     s.start_date,
     s.end_date,
