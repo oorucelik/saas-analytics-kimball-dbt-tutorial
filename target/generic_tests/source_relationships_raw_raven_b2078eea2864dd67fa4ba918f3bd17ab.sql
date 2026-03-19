@@ -1,1 +1,0 @@
-{{ test_relationships(column_name="account_id", field="account_id", model=get_where_subquery(source('raw', 'ravenstack_subscriptions')), to=source('raw', 'ravenstack_accounts')) }}

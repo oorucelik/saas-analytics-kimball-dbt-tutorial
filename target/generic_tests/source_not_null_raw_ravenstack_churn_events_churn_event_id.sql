@@ -1,1 +1,0 @@
-{{ test_not_null(column_name="churn_event_id", model=get_where_subquery(source('raw', 'ravenstack_churn_events'))) }}

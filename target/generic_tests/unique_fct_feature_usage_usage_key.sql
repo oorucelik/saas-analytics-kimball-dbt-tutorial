@@ -1,1 +1,0 @@
-{{ test_unique(column_name="usage_key", model=get_where_subquery(ref('fct_feature_usage'))) }}
