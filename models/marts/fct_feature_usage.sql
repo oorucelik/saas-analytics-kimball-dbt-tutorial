@@ -6,17 +6,21 @@ with usage as (
 ),
 
 subscriptions as (
-    select subscription_id, subscription_key, account_key
-    from {{ ref('fct_subscriptions') }}
+    select subscription_id, account_id
+    from {{ ref('stg_subscriptions') }}
+),
+
+accounts as (
+    select account_id, account_key
+    from {{ ref('dim_account') }}
 )
 
 select
     {{ dbt_utils.generate_surrogate_key(['u.usage_id']) }}  as usage_key,
     u.usage_id,
 
-    -- Foreign keys
-    s.subscription_key,
-    s.account_key,
+    -- Foreign keys (built from staging + dimensions)
+    a.account_key,
 
     -- Dimensions
     u.usage_date,
@@ -32,3 +36,4 @@ select
 
 from usage u
 left join subscriptions s on u.subscription_id = s.subscription_id
+left join accounts a on s.account_id = a.account_id

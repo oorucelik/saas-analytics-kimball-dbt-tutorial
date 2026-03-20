@@ -8,3 +8,4 @@ dbt_internal_packages/
 dbt.log
 dbt_ravenstack
 ravenstack.duckdb
+profiles.yml
